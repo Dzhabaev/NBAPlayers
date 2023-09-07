@@ -21,12 +21,12 @@ class PlayerDetailsViewController: UIViewController {
         navigationItem.title = player?.fullName
         positionLabel.text = player?.position
         heightLabel.text = player?.height
-        teamButton.setTitle(player?.teamName, for: .normal)
+        teamButton.setTitle(player?.team.fullName, for: .normal)
     }
     @IBAction func onTeamButtonClick(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: .main)
         let teamNameViewController = storyboard.instantiateViewController(identifier: "TeamNameViewController") as! TeamNameViewController
-        teamNameViewController.player = player
+        teamNameViewController.team = player?.team
         navigationController?.pushViewController(teamNameViewController, animated: true)
     }
 }

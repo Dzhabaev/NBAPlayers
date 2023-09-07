@@ -66,17 +66,46 @@
                                     <outlet property="delegate" destination="4EC-u7-jEk" id="b1T-gd-9JF"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2EU-uV-uyQ">
+                                <rect key="frame" x="145.66666666666666" y="490.66666666666669" width="102" height="35.000000000000057"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Обновить"/>
+                                <connections>
+                                    <action selector="onReloadButtonClick:" destination="4EC-u7-jEk" eventType="touchUpInside" id="XfQ-AN-3qC"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Что-то пошло не так" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O0Q-X8-TCe">
+                                <rect key="frame" x="114" y="450.33333333333331" width="165" height="20.333333333333314"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" systemColor="systemRedColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="F2B-GZ-kB8">
+                                <rect key="frame" x="186.66666666666666" y="450.66666666666669" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="oO4-e7-G8U"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="O0Q-X8-TCe" firstAttribute="centerX" secondItem="oO4-e7-G8U" secondAttribute="centerX" id="0fe-kE-ih5"/>
+                            <constraint firstItem="F2B-GZ-kB8" firstAttribute="centerY" secondItem="oO4-e7-G8U" secondAttribute="centerY" id="Fmd-63-HZU"/>
                             <constraint firstItem="VIX-jE-1Ei" firstAttribute="leading" secondItem="oO4-e7-G8U" secondAttribute="leading" id="Gpp-QZ-UP4"/>
+                            <constraint firstItem="F2B-GZ-kB8" firstAttribute="centerX" secondItem="oO4-e7-G8U" secondAttribute="centerX" id="JAo-oo-4GG"/>
                             <constraint firstItem="VIX-jE-1Ei" firstAttribute="top" secondItem="oO4-e7-G8U" secondAttribute="top" id="bbb-FC-UBg"/>
+                            <constraint firstItem="2EU-uV-uyQ" firstAttribute="centerX" secondItem="oO4-e7-G8U" secondAttribute="centerX" id="e3b-TL-yVz"/>
+                            <constraint firstItem="2EU-uV-uyQ" firstAttribute="top" secondItem="O0Q-X8-TCe" secondAttribute="bottom" constant="20" id="iYg-vQ-sc7"/>
                             <constraint firstItem="VIX-jE-1Ei" firstAttribute="bottom" secondItem="oO4-e7-G8U" secondAttribute="bottom" id="ogl-B4-Ypc"/>
                             <constraint firstItem="VIX-jE-1Ei" firstAttribute="trailing" secondItem="oO4-e7-G8U" secondAttribute="trailing" id="reo-2u-1rc"/>
+                            <constraint firstItem="O0Q-X8-TCe" firstAttribute="centerY" secondItem="oO4-e7-G8U" secondAttribute="centerY" id="zPK-Ee-ZBY"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Players" id="FAj-Lg-mlx"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="F2B-GZ-kB8" id="ZJB-Ou-ZSb"/>
+                        <outlet property="errorLabel" destination="O0Q-X8-TCe" id="CMe-5Z-07E"/>
+                        <outlet property="reloadButton" destination="2EU-uV-uyQ" id="Mzd-3X-Nx2"/>
+                        <outlet property="tableView" destination="VIX-jE-1Ei" id="0rT-oE-N6o"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M0F-bu-oeO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -109,10 +138,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jX6-v5-l2l">
-                                <rect key="frame" x="16" y="132.66666666666666" width="51" height="33"/>
+                                <rect key="frame" x="159" y="136" width="75" height="34.333333333333343"/>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button">
+                                    <fontDescription key="titleFontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                                </buttonConfiguration>
                                 <connections>
                                     <action selector="onTeamButtonClick:" destination="FGe-mn-blK" eventType="touchUpInside" id="KFu-IS-E5w"/>
                                 </connections>
@@ -121,17 +153,16 @@
                         <viewLayoutGuide key="safeArea" id="jif-LA-oS8"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="jX6-v5-l2l" firstAttribute="centerX" secondItem="jif-LA-oS8" secondAttribute="centerX" id="0UJ-jD-Fkg"/>
                             <constraint firstItem="Cc0-Uz-W3q" firstAttribute="top" secondItem="jif-LA-oS8" secondAttribute="top" constant="16" id="65C-n2-qih"/>
-                            <constraint firstItem="jX6-v5-l2l" firstAttribute="firstBaseline" secondItem="Eay-or-oqt" secondAttribute="firstBaseline" constant="32" id="6lv-KZ-ltn"/>
+                            <constraint firstItem="jX6-v5-l2l" firstAttribute="top" secondItem="Eay-or-oqt" secondAttribute="bottom" constant="8" symbolic="YES" id="A3z-jp-82w"/>
                             <constraint firstItem="Zjv-yM-wma" firstAttribute="centerY" secondItem="Eay-or-oqt" secondAttribute="centerY" id="B1e-ZD-LzS"/>
                             <constraint firstItem="jif-LA-oS8" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Cc0-Uz-W3q" secondAttribute="trailing" symbolic="YES" id="GUG-0f-Yer"/>
-                            <constraint firstItem="jX6-v5-l2l" firstAttribute="leading" secondItem="jif-LA-oS8" secondAttribute="leading" constant="16" id="PjL-3p-LaX"/>
                             <constraint firstItem="jif-LA-oS8" firstAttribute="trailing" secondItem="Zjv-yM-wma" secondAttribute="trailing" constant="16" id="QE6-ib-Prk"/>
                             <constraint firstItem="Eay-or-oqt" firstAttribute="leading" secondItem="jif-LA-oS8" secondAttribute="leading" constant="16" id="S5p-Mj-6Qr"/>
                             <constraint firstItem="Cc0-Uz-W3q" firstAttribute="leading" secondItem="jif-LA-oS8" secondAttribute="leading" constant="16" id="cJ5-y1-QFM"/>
                             <constraint firstItem="Eay-or-oqt" firstAttribute="top" secondItem="Cc0-Uz-W3q" secondAttribute="bottom" constant="8" symbolic="YES" id="ftz-0Y-8Xt"/>
                             <constraint firstItem="Zjv-yM-wma" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Eay-or-oqt" secondAttribute="trailing" constant="8" symbolic="YES" id="pnO-0e-VS1"/>
-                            <constraint firstItem="jif-LA-oS8" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="jX6-v5-l2l" secondAttribute="trailing" symbolic="YES" id="vUF-Ee-H6P"/>
                         </constraints>
                     </view>
                     <connections>
@@ -152,8 +183,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jrP-Fn-S5b">
-                                <rect key="frame" x="16" y="75" width="45" height="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="cityName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wcI-6J-NBm">
+                                <rect key="frame" x="16" y="75" width="90" height="24"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -161,12 +192,6 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Conference:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="goC-Fj-bJ2">
                                 <rect key="frame" x="16" y="115" width="94" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fgt-Bf-ian" userLabel="CityName">
-                                <rect key="frame" x="325" y="75" width="52" height="24"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -180,26 +205,24 @@
                         <viewLayoutGuide key="safeArea" id="oFk-Hs-fzf"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="fgt-Bf-ian" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="jrP-Fn-S5b" secondAttribute="trailing" constant="8" symbolic="YES" id="4Xa-rw-eBV"/>
-                            <constraint firstItem="goC-Fj-bJ2" firstAttribute="leading" secondItem="oFk-Hs-fzf" secondAttribute="leading" constant="16" id="Bab-Xg-i69"/>
-                            <constraint firstItem="goC-Fj-bJ2" firstAttribute="top" secondItem="jrP-Fn-S5b" secondAttribute="bottom" constant="16" id="E4H-YG-ZQp"/>
-                            <constraint firstItem="D5c-rO-5hm" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="goC-Fj-bJ2" secondAttribute="trailing" constant="8" symbolic="YES" id="Gg1-1C-52v"/>
-                            <constraint firstItem="fgt-Bf-ian" firstAttribute="centerY" secondItem="jrP-Fn-S5b" secondAttribute="centerY" id="XsI-8W-Gai"/>
-                            <constraint firstItem="jrP-Fn-S5b" firstAttribute="top" secondItem="oFk-Hs-fzf" secondAttribute="top" constant="16" id="aiS-31-o4E"/>
-                            <constraint firstItem="oFk-Hs-fzf" firstAttribute="trailing" secondItem="fgt-Bf-ian" secondAttribute="trailing" constant="16" id="d52-7n-9L1"/>
-                            <constraint firstItem="oFk-Hs-fzf" firstAttribute="trailing" secondItem="D5c-rO-5hm" secondAttribute="trailing" constant="16" id="iwk-wN-6qF"/>
-                            <constraint firstItem="D5c-rO-5hm" firstAttribute="centerY" secondItem="goC-Fj-bJ2" secondAttribute="centerY" id="reN-pd-joA"/>
-                            <constraint firstItem="jrP-Fn-S5b" firstAttribute="leading" secondItem="oFk-Hs-fzf" secondAttribute="leading" constant="16" id="sud-2o-VF0"/>
+                            <constraint firstItem="D5c-rO-5hm" firstAttribute="centerY" secondItem="goC-Fj-bJ2" secondAttribute="centerY" id="DkJ-HC-h9R"/>
+                            <constraint firstItem="oFk-Hs-fzf" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="wcI-6J-NBm" secondAttribute="trailing" symbolic="YES" id="OEN-oW-0do"/>
+                            <constraint firstItem="wcI-6J-NBm" firstAttribute="leading" secondItem="oFk-Hs-fzf" secondAttribute="leading" constant="16" id="OEg-aS-gUm"/>
+                            <constraint firstItem="goC-Fj-bJ2" firstAttribute="leading" secondItem="oFk-Hs-fzf" secondAttribute="leading" constant="16" id="imB-kS-bcz"/>
+                            <constraint firstItem="goC-Fj-bJ2" firstAttribute="top" secondItem="wcI-6J-NBm" secondAttribute="bottom" constant="16" id="j7a-qY-ZJX"/>
+                            <constraint firstItem="D5c-rO-5hm" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="goC-Fj-bJ2" secondAttribute="trailing" constant="8" symbolic="YES" id="jxc-yi-kcr"/>
+                            <constraint firstItem="wcI-6J-NBm" firstAttribute="top" secondItem="oFk-Hs-fzf" secondAttribute="top" constant="16" id="qZy-fe-z5q"/>
+                            <constraint firstItem="oFk-Hs-fzf" firstAttribute="trailing" secondItem="D5c-rO-5hm" secondAttribute="trailing" constant="16" id="x0w-zP-i68"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="cityName" destination="fgt-Bf-ian" id="1be-nj-My1"/>
+                        <outlet property="cityName" destination="wcI-6J-NBm" id="NPv-uF-R5K"/>
                         <outlet property="conferenceName" destination="D5c-rO-5hm" id="PS2-Is-qNP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wm6-6Y-K5G" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1248" y="-126"/>
+            <point key="canvasLocation" x="1246.5648854961833" y="-126.05633802816902"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Ag6-AY-IzH">
@@ -221,6 +244,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
