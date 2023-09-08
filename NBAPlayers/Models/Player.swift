@@ -39,6 +39,3 @@ struct Player: Decodable {
         case heightInches = "height_inches"
     }
 }
-
-let lakers = Team(name: "Lakers", city: "Los Angeles", conference: "West")
-let heat = Team(name: "Heat", city: "Miami", conference: "East")

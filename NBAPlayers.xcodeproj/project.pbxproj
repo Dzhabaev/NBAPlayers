@@ -16,8 +16,14 @@
 		7206481C2AA8B7E200992FD0 /* PlayerDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7206481B2AA8B7E200992FD0 /* PlayerDetailsViewController.swift */; };
 		7206481E2AA8BD0200992FD0 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7206481D2AA8BD0200992FD0 /* Player.swift */; };
 		720648202AA8F09B00992FD0 /* TeamNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7206481F2AA8F09B00992FD0 /* TeamNameViewController.swift */; };
+		72B270F32AAA168E00C37048 /* GamesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B270F22AAA168E00C37048 /* GamesViewController.swift */; };
+		72B270F52AAA18A700C37048 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B270F42AAA18A700C37048 /* Game.swift */; };
 		72B4C3402AA9D2320030EF09 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B4C33F2AA9D2320030EF09 /* Team.swift */; };
 		72B4C3432AA9DE8D0030EF09 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B4C3422AA9DE8D0030EF09 /* ApiClient.swift */; };
+		72FD1FB52AAB31E400C1B63B /* GameDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FD1FB42AAB31E400C1B63B /* GameDetailsViewController.swift */; };
+		72FD1FB72AABC18400C1B63B /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FD1FB62AABC18400C1B63B /* DateUtils.swift */; };
+		72FD1FB92AABD30D00C1B63B /* ApiClientGames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FD1FB82AABD30D00C1B63B /* ApiClientGames.swift */; };
+		72FD1FBB2AABD90000C1B63B /* DataLoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FD1FBA2AABD90000C1B63B /* DataLoadingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,8 +38,14 @@
 		7206481B2AA8B7E200992FD0 /* PlayerDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDetailsViewController.swift; sourceTree = "<group>"; };
 		7206481D2AA8BD0200992FD0 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		7206481F2AA8F09B00992FD0 /* TeamNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamNameViewController.swift; sourceTree = "<group>"; };
+		72B270F22AAA168E00C37048 /* GamesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesViewController.swift; sourceTree = "<group>"; };
+		72B270F42AAA18A700C37048 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		72B4C33F2AA9D2320030EF09 /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		72B4C3422AA9DE8D0030EF09 /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
+		72FD1FB42AAB31E400C1B63B /* GameDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailsViewController.swift; sourceTree = "<group>"; };
+		72FD1FB62AABC18400C1B63B /* DateUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
+		72FD1FB82AABD30D00C1B63B /* ApiClientGames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClientGames.swift; sourceTree = "<group>"; };
+		72FD1FBA2AABD90000C1B63B /* DataLoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLoadingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,15 +78,12 @@
 		720648042AA8AEE900992FD0 /* NBAPlayers */ = {
 			isa = PBXGroup;
 			children = (
-				72B4C3412AA9DE5E0030EF09 /* Network */,
 				720648052AA8AEE900992FD0 /* AppDelegate.swift */,
-				7206481D2AA8BD0200992FD0 /* Player.swift */,
-				72B4C33F2AA9D2320030EF09 /* Team.swift */,
 				720648072AA8AEE900992FD0 /* SceneDelegate.swift */,
+				72FD1FBC2AABDB4D00C1B63B /* Models */,
+				72FD1FBD2AABDBA500C1B63B /* ViewControllers */,
+				72B4C3412AA9DE5E0030EF09 /* Network */,
 				7206480B2AA8AEE900992FD0 /* Main.storyboard */,
-				720648192AA8AFEA00992FD0 /* PlayersViewController.swift */,
-				7206481B2AA8B7E200992FD0 /* PlayerDetailsViewController.swift */,
-				7206481F2AA8F09B00992FD0 /* TeamNameViewController.swift */,
 				7206480E2AA8AEEB00992FD0 /* Assets.xcassets */,
 				720648102AA8AEEB00992FD0 /* LaunchScreen.storyboard */,
 				720648132AA8AEEB00992FD0 /* Info.plist */,
@@ -86,8 +95,33 @@
 			isa = PBXGroup;
 			children = (
 				72B4C3422AA9DE8D0030EF09 /* ApiClient.swift */,
+				72FD1FB82AABD30D00C1B63B /* ApiClientGames.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		72FD1FBC2AABDB4D00C1B63B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				7206481D2AA8BD0200992FD0 /* Player.swift */,
+				72B270F42AAA18A700C37048 /* Game.swift */,
+				72B4C33F2AA9D2320030EF09 /* Team.swift */,
+				72FD1FB62AABC18400C1B63B /* DateUtils.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		72FD1FBD2AABDBA500C1B63B /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				72FD1FBA2AABD90000C1B63B /* DataLoadingViewController.swift */,
+				720648192AA8AFEA00992FD0 /* PlayersViewController.swift */,
+				72B270F22AAA168E00C37048 /* GamesViewController.swift */,
+				7206481B2AA8B7E200992FD0 /* PlayerDetailsViewController.swift */,
+				72FD1FB42AAB31E400C1B63B /* GameDetailsViewController.swift */,
+				7206481F2AA8F09B00992FD0 /* TeamNameViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -162,10 +196,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				720648062AA8AEE900992FD0 /* AppDelegate.swift in Sources */,
+				72FD1FB72AABC18400C1B63B /* DateUtils.swift in Sources */,
+				72B270F52AAA18A700C37048 /* Game.swift in Sources */,
+				72FD1FBB2AABD90000C1B63B /* DataLoadingViewController.swift in Sources */,
 				720648082AA8AEE900992FD0 /* SceneDelegate.swift in Sources */,
 				72B4C3402AA9D2320030EF09 /* Team.swift in Sources */,
 				72B4C3432AA9DE8D0030EF09 /* ApiClient.swift in Sources */,
+				72FD1FB92AABD30D00C1B63B /* ApiClientGames.swift in Sources */,
+				72B270F32AAA168E00C37048 /* GamesViewController.swift in Sources */,
 				7206481C2AA8B7E200992FD0 /* PlayerDetailsViewController.swift in Sources */,
+				72FD1FB52AAB31E400C1B63B /* GameDetailsViewController.swift in Sources */,
 				7206481E2AA8BD0200992FD0 /* Player.swift in Sources */,
 				720648202AA8F09B00992FD0 /* TeamNameViewController.swift in Sources */,
 				7206481A2AA8AFEA00992FD0 /* PlayersViewController.swift in Sources */,
